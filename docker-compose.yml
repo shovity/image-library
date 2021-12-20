@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+
+  image-library:
+    image: image-library
+    build: .
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./upload:/app/upload
+    restart: always
