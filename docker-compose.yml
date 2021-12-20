@@ -9,4 +9,6 @@ services:
       NODE_ENV: production
     volumes:
       - ./upload:/app/upload
+    ports:
+      - 8789:3000
     restart: always

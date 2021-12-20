@@ -1,3 +1,4 @@
+const path = require('path')
 const eroc = require('eroc')
 const config = require('eroc/config')
 const stringUtil = require('eroc/utils/string')
@@ -11,12 +12,13 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
 
         const client = req.headers['il-client']
+        const folder = req.headers['il-folder'] || ''
 
         if (!config.allow_client.split(',').includes(client)) {
             return cb('Forbidden')
         }
 
-        return cb(null, 'upload')
+        return cb(null, path.join('upload', folder))
     },
     filename: function (req, file, cb) {
         const ext = file.originalname.split('.').pop()
