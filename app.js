@@ -6,7 +6,10 @@ const router = require('./router')
 
 const app = eroc.createApplication((app) => {
     app.use('/api/image-library', router)
-    app.use(express.static('upload'))
+
+    app.use(express.static('upload', {
+        maxAge: '1y',
+    }))
 })
 
 app.start()
