@@ -1,0 +1,21 @@
+{
+  "name": "image-library",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/shovity/image-library.git",
+  "author": "Shovity",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node app",
+    "dev": "npx nodemon app"
+  },
+  "dependencies": {
+    "eroc": "^1.6.2",
+    "multer": "^1.4.4",
+    "slugify": "^1.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
